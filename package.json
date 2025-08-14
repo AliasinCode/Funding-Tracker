@@ -1,0 +1,53 @@
+{
+  "name": "renewable-energy-document-parser",
+  "version": "1.0.0",
+  "description": "A desktop application for parsing renewable energy legal documents and extracting table of contents",
+  "main": "dist/main.js",
+  "scripts": {
+    "start": "electron .",
+    "dev": "concurrently \"npm run build:renderer\" \"npm run build:main\" \"wait-on dist/renderer.js && electron .\"",
+    "build": "npm run build:main && npm run build:renderer",
+    "build:main": "tsc -p tsconfig.main.json",
+    "build:renderer": "tsc -p tsconfig.renderer.json",
+    "watch:main": "tsc -p tsconfig.main.json --watch",
+    "watch:renderer": "tsc -p tsconfig.renderer.json --watch",
+    "package": "electron-builder",
+    "dist": "npm run build && npm run package"
+  },
+  "keywords": ["renewable-energy", "legal-documents", "pdf-parser", "electron", "desktop-app"],
+  "author": "Brendan Larsen",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "concurrently": "^8.0.0",
+    "electron": "^25.0.0",
+    "electron-builder": "^24.0.0",
+    "typescript": "^5.0.0",
+    "wait-on": "^7.0.0"
+  },
+  "dependencies": {
+    "pdf-parse": "^1.1.1",
+    "exceljs": "^4.3.0",
+    "natural": "^6.0.0"
+  },
+  "build": {
+    "appId": "com.brendanlarsen.renewable-energy-document-parser",
+    "productName": "Renewable Energy Document Parser",
+    "directories": {
+      "output": "release"
+    },
+    "files": [
+      "dist/**/*",
+      "node_modules/**/*"
+    ],
+    "mac": {
+      "category": "public.app-category.productivity"
+    },
+    "win": {
+      "target": "nsis"
+    },
+    "linux": {
+      "target": "AppImage"
+    }
+  }
+}
