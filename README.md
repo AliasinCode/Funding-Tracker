@@ -114,7 +114,7 @@ src/
 
 ## Development Roadmap
 
-### Phase 1: Foundation ✅
+### Phase 1: Foundation
 - [x] Project setup and structure
 - [x] Electron application framework
 - [x] Basic UI components
