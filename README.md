@@ -4,20 +4,20 @@ A desktop application built with Electron and TypeScript that allows users to up
 
 ## Features
 
-### 🚀 Core Functionality
+### Core Functionality
 - **PDF Upload & Processing**: Drag and drop or file picker for PDF documents
 - **Automatic TOC Extraction**: Intelligent detection of table of contents using pattern matching
 - **Document Type Detection**: Automatic classification of ECCA, MIPA, and LLCA documents
 - **Section Selection**: Interactive tree view with expandable/collapsible sections
 - **Excel Export**: Export selected sections with customizable options
 
-### 🎨 User Interface
+### User Interface
 - **Modern Design**: Clean, responsive interface built with modern CSS
 - **Multi-State Views**: Welcome, processing, results, and error states
 - **Progress Tracking**: Visual progress indicators and processing steps
 - **Responsive Layout**: Works on desktop and tablet devices
 
-### 📊 Export Options
+### Export Options
 - **Single Sheet Export**: All sections in one Excel sheet
 - **Multiple Sheets**: Separate sheets for TOC, content, and document info
 - **Content Inclusion**: Option to include or exclude section content
