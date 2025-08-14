@@ -40,14 +40,14 @@ body {
 }
 
 .btn-primary {
-    background-color: #3b82f6;
+    background-color: #DC2626;
     color: white;
 }
 
 .btn-primary:hover:not(:disabled) {
-    background-color: #2563eb;
+    background-color: #B91C1C;
     transform: translateY(-1px);
-    box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
+    box-shadow: 0 4px 12px rgba(220, 38, 38, 0.3);
 }
 
 .btn-secondary {

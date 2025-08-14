@@ -1,185 +1,169 @@
-# Renewable Energy Legal Document Parser - Project Plan
+# Portfolio Finance Funding Tracker - Project Plan
 
 ## Project Overview
-A local desktop application that allows users to upload legal PDFs commonly used in the renewable energy sector (ECCAs, MIPAs, LLCAs), automatically extracts the table of contents, presents it to users for section selection, and outputs selected sections to Excel format.
+A local desktop application that allows users to upload legal PDFs commonly used in the renewable energy sector (ECCAs, MIPAs, LLCAs), automatically extracts the table of contents, presents articles for user selection, uses AI to summarize selected articles, and outputs the summaries to Excel format on the desktop.
+
+## Current Status ✅
+- **Electron application framework** - Complete
+- **Basic UI with header and navigation** - Complete  
+- **PDF file upload functionality** - Complete
+- **Application branding (Clearway logo)** - Complete
+- **Simplified, working codebase** - Complete
 
 ## Target Documents
 - **ECCA** (Equity Capital Contribution Agreement)
 - **MIPA** (Master Interest Purchase Agreement) 
 - **LLCA** (Limited Liability Company Agreement)
 
-## Core Features
+## Enhanced Core Features
 
-### 1. Document Upload & Processing
-- PDF file upload interface
-- File validation (PDF format, size limits)
+### 1. Document Upload & Processing ✅
+- PDF file upload interface ✅
+- File validation (PDF format, size limits) ✅
 - Document type detection/classification
 - PDF text extraction and parsing
 
-### 2. Table of Contents Extraction
-- Automatic TOC detection and parsing
-- Hierarchical structure recognition
-- Page number mapping
-- Section numbering identification
+### 2. Table of Contents Extraction (Algorithm-Based)
+- **Automatic TOC detection** using pattern matching algorithms
+- **Article identification** ("Article 1", "Section 1.1", etc.)
+- **Hierarchical structure recognition** based on formatting
+- **Page number mapping** and association
+- **Document type detection** (ECCA/MIPA/LLCA)
 
-### 3. User Interface
-- Clean, modern web interface
-- TOC display with expandable/collapsible sections
-- Section selection (checkboxes, multi-select)
-- Progress indicators and status updates
+### 3. Article Selection Interface
+- **Complete article list** display from TOC
+- **Checkbox selection** for individual articles
+- **Select All/Clear Selection** functionality
+- **Selection count display** (selected vs total)
+- **Expandable/collapsible** article hierarchy
 
-### 4. Excel Export
-- Selected sections formatted in Excel
-- Proper column structure (Section, Content, Page Numbers)
-- Multiple sheet support for different document types
-- Downloadable Excel files
+### 4. AI Summarization (Future Phase)
+- **AI API integration** for article summarization
+- **Progress tracking** during summarization
+- **Error handling** for AI processing failures
+- **Summary quality validation**
+
+### 5. Excel Export with Summaries
+- **Desktop Excel workbook creation**
+- **Article titles and page numbers**
+- **AI-generated summaries**
+- **Structured formatting** with multiple sheets
+- **Clear file naming** (DocumentName_Summaries_Date.xlsx)
 
 ## Technical Architecture
 
-### Desktop Application
-- **Framework**: Electron with React/TypeScript or Tauri with React/TypeScript
-- **Alternative**: Python with Tkinter/PyQt or C# with WPF
-- **UI**: Native desktop interface with modern design
-- **File Handling**: Native file system access, drag & drop support
+### Current Stack ✅
+- **Framework**: Electron with TypeScript ✅
+- **UI**: HTML/CSS with Font Awesome icons ✅
+- **File Handling**: Native file system access ✅
+- **Build Process**: TypeScript compilation with asset copying ✅
 
-### Technology Stack Decision
-**Recommended: Electron + React/TypeScript**
-- **Pros**: Cross-platform, rich ecosystem, familiar web technologies
-- **Cons**: Larger bundle size, higher memory usage
-
-**Alternative: Python + PyQt/Tkinter**
-- **Pros**: Smaller footprint, excellent PDF libraries, faster processing
-- **Cons**: Less modern UI, more complex deployment
-
-**Alternative: C# + WPF**
-- **Pros**: Native Windows performance, excellent tooling
-- **Cons**: Windows-only, steeper learning curve
-
-### Core Processing
-- **PDF Processing**: pdf-parse, pdf-lib, or PyPDF2 (Python) / iTextSharp (C#)
-- **Excel Generation**: ExcelJS or xlsx (Node.js) / openpyxl (Python) / EPPlus (C#)
-- **Text Processing**: Natural language processing libraries for TOC detection
-- **File Storage**: Local file system with temporary processing directories
-
-### PDF Processing Pipeline
-1. PDF upload → Text extraction
-2. Text analysis → TOC identification
-3. Section parsing → Content extraction
-4. User selection → Excel generation
+### Core Processing Pipeline
+1. **PDF Upload** → Text extraction
+2. **TOC Detection** → Article identification (Algorithm-based)
+3. **Article Selection** → User interface
+4. **AI Summarization** → Selected articles (Future)
+5. **Excel Export** → Desktop workbook creation
 
 ## Development Phases
 
-### Phase 1: Foundation & Setup (Week 1)
-- [ ] Project initialization and setup
-- [ ] Desktop application framework setup (Electron/Tauri or Python/C#)
-- [ ] Development environment configuration
-- [ ] Git repository setup
-- [ ] Basic desktop UI framework implementation
+### Phase 1: Foundation & Setup ✅ COMPLETE
+- [x] Project initialization and setup
+- [x] Electron application framework setup
+- [x] Development environment configuration
+- [x] Git repository setup
+- [x] Basic desktop UI framework implementation
+- [x] PDF upload functionality
+- [x] Application branding and icons
 
-### Phase 2: PDF Processing Core (Week 2)
-- [ ] PDF upload functionality
-- [ ] PDF text extraction implementation
-- [ ] Basic document parsing
-- [ ] Error handling and validation
+### Phase 2: TOC Detection Algorithm (Current)
+- [ ] **PDF text extraction** implementation
+- [ ] **Pattern matching** for article detection
+- [ ] **Page number association** with articles
+- [ ] **Hierarchy detection** based on formatting
+- [ ] **Document type classification** (ECCA/MIPA/LLCA)
+- [ ] **Error handling** and validation
 
-### Phase 3: TOC Extraction (Week 3)
-- [ ] Table of contents detection algorithms
-- [ ] Section hierarchy parsing
-- [ ] Page number mapping
-- [ ] TOC display interface
+### Phase 3: Article Selection Interface
+- [ ] **Article list display** with checkboxes
+- [ ] **Selection functionality** (individual, select all, clear)
+- [ ] **Hierarchical tree view** (expandable/collapsible)
+- [ ] **Selection count display**
+- [ ] **Progress indicators** for processing
 
-### Phase 4: User Interface (Week 4)
-- [ ] Main application layout
-- [ ] Document upload interface (file picker, drag & drop)
-- [ ] TOC display with section selection
-- [ ] Native desktop UI implementation
+### Phase 4: AI Integration (Future)
+- [ ] **AI API selection** and integration
+- [ ] **Article summarization** functionality
+- [ ] **Progress tracking** during AI processing
+- [ ] **Error handling** for AI failures
+- [ ] **Summary quality** validation
 
-### Phase 5: Excel Export (Week 5)
-- [ ] Excel generation functionality
-- [ ] Section content formatting
-- [ ] Download functionality
-- [ ] Export customization options
+### Phase 5: Excel Export with Summaries
+- [ ] **Desktop Excel workbook** creation
+- [ ] **Article metadata** (title, page number)
+- [ ] **AI summary integration**
+- [ ] **Structured formatting** and multiple sheets
+- [ ] **File naming** and organization
 
-### Phase 6: Testing & Refinement (Week 6)
-- [ ] Unit testing implementation
-- [ ] Integration testing
-- [ ] User acceptance testing
-- [ ] Performance optimization
-- [ ] Bug fixes and refinements
+### Phase 6: Testing & Refinement
+- [ ] **Unit testing** implementation
+- [ ] **Integration testing**
+- [ ] **User acceptance testing**
+- [ ] **Performance optimization**
+- [ ] **Bug fixes** and refinements
 
-### Phase 7: Deployment & Documentation (Week 7)
-- [ ] Application packaging and distribution
-- [ ] User documentation and installation guides
-- [ ] Technical documentation
-- [ ] Maintenance procedures and updates
+## Technical Implementation Details
 
-## Technical Requirements
+### TOC Detection Algorithm Approach
+**Recommended: Pattern-based algorithm** (not AI)
+- **Pattern matching**: "Article X", "Section X.Y", etc.
+- **Formatting analysis**: Bold text, indentation, numbering
+- **Page number detection**: Regex patterns for page references
+- **Hierarchy building**: Parent-child relationships
+- **Advantages**: Fast, reliable, no API costs, works offline
 
 ### Dependencies
-**Option 1: Electron/Node.js Stack**
-- **PDF Processing**: `pdf-parse`, `pdf-lib`
-- **Excel Generation**: `exceljs` or `xlsx`
-- **Text Processing**: `natural` or custom algorithms
-
-**Option 2: Python Stack**
-- **PDF Processing**: `PyPDF2`, `pdfplumber`
-- **Excel Generation**: `openpyxl`, `xlsxwriter`
-- **Text Processing**: `spaCy`, `nltk`, or custom algorithms
-
-**Option 3: C# Stack**
-- **PDF Processing**: `iTextSharp`, `PdfSharp`
-- **Excel Generation**: `EPPlus`, `ClosedXML`
-- **Text Processing**: Custom algorithms or ML.NET
+- **PDF Processing**: `pdf-parse` ✅ (already installed)
+- **Excel Generation**: `exceljs` ✅ (already installed)
+- **Text Processing**: Custom algorithms (no additional dependencies)
+- **AI Integration**: TBD (future phase)
 
 ### Performance Considerations
-- Large PDF handling (100+ pages)
-- Memory optimization for document processing
-- Native file system access for faster I/O
-- Progress tracking for long operations
-- Local processing eliminates network latency
-
-### Security Considerations
-- File type validation
-- File size limits
-- Local file processing (no data leaves user's machine)
-- Input sanitization
-- Secure temporary file handling
+- **Large PDF handling** (100+ pages)
+- **Memory optimization** for document processing
+- **Progress tracking** for long operations
+- **Local processing** (no network dependencies)
 
 ## Success Metrics
-- [ ] Successfully parse 90%+ of target document types
-- [ ] TOC extraction accuracy > 95%
-- [ ] Excel export completion in < 30 seconds
-- [ ] User interface response time < 2 seconds
-- [ ] Support for PDFs up to 500 pages
+- [ ] **TOC extraction accuracy** > 95%
+- [ ] **Article detection** success rate > 90%
+- [ ] **Processing time** < 30 seconds for 100-page documents
+- [ ] **User interface** response time < 2 seconds
+- [ ] **Support for PDFs** up to 500 pages
 
 ## Risk Mitigation
-- **PDF Format Variations**: Implement multiple parsing strategies
-- **Large File Handling**: Implement streaming and chunking
-- **Cross-Platform Compatibility**: Test on Windows, macOS, and Linux
-- **Performance Issues**: Implement caching and optimization
-- **Dependency Management**: Ensure all libraries work offline
+- **PDF Format Variations**: Multiple parsing strategies
+- **Large File Handling**: Streaming and chunking
+- **Algorithm Accuracy**: Extensive testing with real documents
+- **Performance Issues**: Caching and optimization
+- **AI Integration**: Fallback to manual processing if needed
 
 ## Future Enhancements
-- Document comparison functionality
-- Template-based parsing for specific document types
-- OCR support for scanned documents
-- Batch processing for multiple documents
-- Multi-language support
-- Export to other formats (Word, PDF)
-- Integration with local document management systems
+- **Document comparison** functionality
+- **Template-based parsing** for specific document types
+- **OCR support** for scanned documents
+- **Batch processing** for multiple documents
+- **Export to other formats** (Word, PDF)
+- **Integration** with document management systems
 
-## Development Team
-- **Desktop Developer**: UI/UX and application logic implementation
-- **PDF Processing Developer**: Document parsing and TOC extraction
-- **DevOps**: Build and packaging for multiple platforms
-- **QA**: Testing and quality assurance across operating systems
-
-## Timeline
-- **Total Duration**: 7 weeks
-- **Milestone Reviews**: End of each phase
-- **Final Delivery**: Week 7
-- **Post-Launch Support**: 2 weeks
+## Development Timeline
+- **Phase 1**: ✅ Complete
+- **Phase 2**: Current (TOC Detection Algorithm)
+- **Phase 3**: Article Selection Interface
+- **Phase 4**: AI Integration (Future)
+- **Phase 5**: Excel Export with Summaries
+- **Phase 6**: Testing & Refinement
 
 ---
 
-*This plan will be updated as development progresses and requirements evolve.*
+*This plan reflects our current progress and the enhanced AI-powered workflow for article summarization.*
